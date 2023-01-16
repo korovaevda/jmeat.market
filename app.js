@@ -15,7 +15,8 @@ let btn4 = $("#btn4");
 let btn5 = $("#btn5");
 let btn6 = $("#btn6");
 
-btn1.on("click", function(){
+btn1.on("click", function(e){
+	alert(e);
 	if (tg.MainButton.isVisible){
 		tg.MainButton.hide();
 	} else{
@@ -32,4 +33,4 @@ tg.MainButton.onClick(function(){
 
 
 
-$("#usercard").add("p").text(’${tg.initDataUnsafe.user.first_name}’)
+$("#usercard").add("p").text('${tg.initDataUnsafe.user.first_name}');
