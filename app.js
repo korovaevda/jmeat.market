@@ -33,4 +33,4 @@ tg.MainButton.onClick(function(){
 
 
 
-$("#usercard").add("p").text('${tg.initDataUnsafe.user.first_name}');
+$("#usercard").add("p").text(`${tg.initDataUnsafe.user.first_name}`);
