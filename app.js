@@ -8,20 +8,14 @@ tg.MainButton.color="#2cab37";
 
 let item = "";
 
-let btn1 = $("#btn1");
-let btn2 = $("#btn2");
-let btn3 = $("#btn3");
-let btn4 = $("#btn4");
-let btn5 = $("#btn5");
-let btn6 = $("#btn6");
-
-btn1.on("click", function(e){
-	alert(e);
+$("[id^=btn]").on("click", function(e){
+	alert(e.target.id);
 	if (tg.MainButton.isVisible){
 		tg.MainButton.hide();
 	} else{
-		tg.MainButton.setText("Вы выбрали товар 1");
-		item= "1";
+		item= e.target.id.substr(-1);
+		tg.MainButton.setText("Вы выбрали товар "+item);
+		
 		tg.MainButton.show();
 	}
 
@@ -30,7 +24,6 @@ btn1.on("click", function(e){
 tg.MainButton.onClick(function(){
 	tg.sendData(item);
 });
-
 
 
 $("#usercard").add("p").text(`${tg.initDataUnsafe.user.first_name}`);
